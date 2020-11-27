@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>Document</title>
+    <script>
+        function openGaleria(imagem){
+            //Section com opacidade
+            var section = document.getElementById("galeriaselected");
+            //Imagem em zoom
+            var img = document.getElementById("imgselected");
+            img.src = document.getElementById(imagem).src;
+
+            section.style.visibility = "visible";
+
+        }
+
+        function closeGaleria(){
+            //Section com opacidade
+            var section = document.getElementById("galeriaselected");
+            section.style.visibility = "hidden";
+        }
+
+        function visibleButton(idbtn, img){
+            var btn = document.getElementById(idbtn);
+            btn.style.visibility = "visible";
+            var img = document.getElementById(img);
+            img.style.filter = "grayscale(100%)";
+        }
+        function hiddenButton(idbtn, img){
+            var btn = document.getElementById(idbtn);
+            btn.style.visibility = "hidden";
+            var img = document.getElementById(img);
+            img.style.filter = "none";
+        }
+    </script>
+</head>
+<body>
+    <section id="galeriaselected">
+        <div>
+            <img id="imgselected" src="imagens/algarve1.jpg">
+            <span onclick="closeGaleria();">&#10006;</span>
+        </div>
+    </section>
+    <section id="galeria">
+        <div onmouseout="hiddenButton('btn1', 'img1');">
+            <img id="img1" onmouseover="visibleButton('btn1','img1');"  src="imagens/algarve1.jpg">
+            <span id="btn1" onmouseover="visibleButton('btn1', 'img1');" onclick="openGaleria('img1');">ABRIR IMAGEM</span>
+        </div>
+        <div onmouseout="hiddenButton('btn2', 'img2');">
+            <img id="img2" onmouseover="visibleButton('btn2','img2');"  src="imagens/algarve2.jpg">
+            <span id="btn2" onmouseover="visibleButton('btn2', 'img2');" onclick="openGaleria('img2');">ABRIR IMAGEM</span>
+        </div>
+        <div onmouseout="hiddenButton('btn3', 'img3');">
+            <img id="img3" onmouseover="visibleButton('btn3','img3');"  src="imagens/algarve3.jpg">
+            <span id="btn3" onmouseover="visibleButton('btn3', 'img3');" onclick="openGaleria('img3');">ABRIR IMAGEM</span>
+        </div>
+        <div onmouseout="hiddenButton('btn4', 'img4');">
+            <img id="img4" onmouseover="visibleButton('btn4','img4');"  src="imagens/algarve4.jpg">
+            <span id="btn4" onmouseover="visibleButton('btn4', 'img4');" onclick="openGaleria('img4');">ABRIR IMAGEM</span>
+        </div>
+        <div onmouseout="hiddenButton('btn5', 'img5');">
+            <img id="img5" onmouseover="visibleButton('btn5','img5');"  src="imagens/algarve5.jpg">
+            <span id="btn5" onmouseover="visibleButton('btn5', 'img5');" onclick="openGaleria('img5');">ABRIR IMAGEM</span>
+        </div>
+        <div onmouseout="hiddenButton('btn6', 'img6');">
+            <img id="img6" onmouseover="visibleButton('btn6','img6');"  src="imagens/algarve6.jpg">
+            <span id="btn6" onmouseover="visibleButton('btn6', 'img6');" onclick="openGaleria('img6');">ABRIR IMAGEM</span>
+        </div>
+
+    </section>
+</body>
+</html>

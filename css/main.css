@@ -1,0 +1,79 @@
+#galeria{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+#galeria div{
+    width: 33%;
+    margin: 0;
+    float:left;
+    cursor: pointer;
+    position: relative;
+}
+ 
+
+#galeria div img{
+    width: 100%;
+    display: block;
+    transition: filter 1s;
+}
+
+#galeria div img:hover{
+    filter: grayscale(100%);
+}
+
+#galeria div:hover > span{
+    visibility: visible;
+}
+
+#galeria div span{
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 20%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    visibility: hidden;
+}
+
+body{
+    margin:0;
+}
+
+#galeriaselected{
+    background-color: rgba(40,40,40,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#galeriaselected div{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+#galeriaselected img{
+    width: 100%;
+}
+
+#galeriaselected span{
+    color: white;
+    font-size: 200%;
+    position: absolute;
+    top:10px;
+    right: 15px;
+    cursor: pointer;
+    transition: all 1s;
+}
